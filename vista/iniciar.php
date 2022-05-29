@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +17,10 @@
     }
     function mover2() {
         window.location.href = '../index.php';
+    }
+    function mover3() {
+        window.location.href = 'olvidocontraseña.php'; //AGREGUÉEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE También la parte del div contraseña
+        
     }
     
     function deshabilitaRetroceso(){
@@ -44,6 +47,11 @@ window.onhashchange=function(){window.location.hash="no-back-button";}}
             <label for="password">Password:</label>
             <input type="password" class="form-control" id="password" placeholder="Enter password" name="pswd">
           </div>
+
+          <div class="contraseña">
+          <button type="button" class="btn btn-dark" id="enviar" onclick="mover3()">Olvidaste tu contraseña?</button>
+          </div><br> 
+          
           <div class="form-group form-check">
             <label class="form-check-label">
               <input class="form-check-input" type="checkbox" name="remember"> Remember me
@@ -51,7 +59,9 @@ window.onhashchange=function(){window.location.hash="no-back-button";}}
           </div>
           <br>
           <button type="submit" class="btn btn-dark" id="submit">Submit</button>
-             <button type="button" class="btn btn-dark" id="enviar" onclick="mover()">registrar</button>
+          <button type="button" class="btn btn-dark" id="enviar" onclick="mover()">registrar</button><br>
+
+
 
          
      </form>
