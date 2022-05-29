@@ -120,6 +120,27 @@ class UsuarioDAO {
         
     return $usuario;
     }
+	
+	
+
+    
+    //AGREGUÉEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+    public function verUsuarioPorCorreo($email){
+        $data_source = new DataSource();
+        $data_table = $data_source->ejecutarConsulta("SELECT * FROM usuario where email = :email", array() );
+        $usuario=null;
+
+        if(count($data_table)==1){
+            $usuario = new Usuario(
+                $data_table[0]["idusuario"],
+                $data_table[0]["nombre"],
+                $data_table[0]["email"],
+                $data_table[0]["foto"]
+            );
+        }
+
+        return $usuario;
+    }
 
     public function editarUsuario($usuario){
         $data_source = new DataSource();
