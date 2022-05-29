@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 800px;
+}
+
+#password {
+  width: 50%;
+  height: 80%;
+}
+
+#email {
+  width: 50%;
+  height: 80%;
+}
+
+#nombre {
+  width: 50%;
+  height: 80%;
+}
+
+#imagenes {
+  width: 50%;
+  height: 80%;
+}
+
+.fotos-ini {
+  width: 1000px;
+  height: 850px;
+}
+
+.foto {
+  width: 120%;
+  height: 100%;
+}
+
+.iniciarsesion {
+  margin-top: 200px;
+  width: 500px;
+  height: 500px;
+  padding-right: 200px;
+}
+
+.letras {
+  width: 300px;
+  height: 100px;
+}
+
+.letras2 {
+  width: 200px;
+  height: 100px;
+  font-style: italic red;
+}
+
+form {
+  width: 600px;
+  height: 400px;
+}
+
+body {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 0px;
+}

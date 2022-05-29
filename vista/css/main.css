@@ -1,0 +1,127 @@
+.nav-link {
+    font-style: inherit;
+    color: white;
+    margin-left: 10px;
+    
+ }
+
+ 
+ .container{
+     margin-top: 40px;
+     margin-bottom: 90px;
+ }
+
+ .card{
+     margin-left: 70px;
+     width: 350px;
+     border-radius: 2%;
+     border: black solid 0px;
+ }
+
+ .card-group{
+     margin-left: 30px;
+ }
+ .card-img{
+     margin-left: 75px;
+     margin-top: 5px;
+     width: 30px;
+     height: 150px;
+     border-radius: 60%;
+ }
+
+ .nave-item {
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.btn{
+    margin: auto;
+    margin-right: 10%;
+}
+.img{
+    width: 40px;
+    height: 30px;
+}
+
+.redesde{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.nevereg{
+    padding-left: 1px;
+}
+
+button{
+    width: 120px;
+    height: 40px;
+}
+
+.links{
+    margin-left: 10px;
+    margin-top: 40px;
+    color: black;
+}
+.imgredes{
+    width: 15px;
+    height: 20px;
+    margin-left: 30px;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    margin-top: 4px;
+}
+
+.col-sm-4{
+    margin-top: 20px;
+    padding-bottom: 30px;
+}
+
+.nombres{
+    color: black;
+}
+
+.nombres:hover{
+    color: white;
+}
+
+.damas{
+    margin-left: 12px;
+    margin-top: 5px;
+    color: black;
+}
+
+.links:hover{
+    color: white;
+}
+
+.damas:hover{
+    color: white;
+}
+.nave{
+    margin-left: 780px;
+}
+@media screen and (min-width: 900px ) and (max-width: 1136px ){
+    .nave{
+        margin-left: 380px;
+      }
+}
+
+@media screen and (min-width: 1100px )and (max-width: 1250px ) {
+    .nave{
+        margin-left: 500px;
+      }
+}
+
+@media screen and (min-width: 1250px )and (max-width: 1350px ) {
+    .nave{
+        margin-left: 600px;
+      }
+}
+
+@media screen and (min-width: 1350px )and (max-width: 1435px ) {
+    .nave{
+        margin-left: 700px;
+      }
+}
+
+
