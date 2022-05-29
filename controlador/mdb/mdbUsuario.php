@@ -46,3 +46,10 @@ function editarUsuario($usuario){
     $dao=new UsuarioDAO();
     $dao->editarUsuario($usuario);
 }
+//AGREGUÉEEEEEEEEEEEEE
+
+function verUsuarioPorCorreo($email){
+    $dao=new UsuarioDAO();
+    $usuario = $dao->verUsuarioPorCorreo($email);
+    return $usuario;
+}
