@@ -63,7 +63,6 @@
                     <ul>
                         <li><a href="perfil.php">Perfil</a></li>
                         <li><a href="modificar.php">Modificar</a></li>
-                        <li><a href="administrador.php">Administrador</a></li>
                         <li><a href="../controlador/accion/act_logout.php">Cerrar sesión</a></li>
                 </li>
             </ul>

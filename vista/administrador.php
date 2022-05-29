@@ -45,11 +45,11 @@
             
       </li>
       <li class="nave-item">
-        <a class="nav-link" href="/vista/administrador.php"><span
+        <a class="nav-link" href="administrador.php"><span
             class="oi oi-calendar"></span> Inicio</a>
       </li>
       <li class="nave-item">
-        <a class="nav-link" href="/vista/registrarusuario.php"><span class="oi oi-briefcase"></span> Insertar</a>
+        <a class="nav-link" href="registrarusuario.php"><span class="oi oi-briefcase"></span> Insertar</a>
       </li>
       
     </ul>

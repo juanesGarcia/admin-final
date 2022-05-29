@@ -5,13 +5,18 @@ mysqli_set_charset($conexion,"utf8")
 <?php
    
     $id = $_GET['id'];
-    $eliminar = "DELETE FROM usuario WHERE idusuario = '$id'";
+    if($id==1000){
+      echo 'no se puede eliminar el usuario admistrador' ;
+    }else{
+ $eliminar = "DELETE FROM usuario WHERE idusuario = '$id'";
     $resultadoEliminar=mysqli_query($conexion,$eliminar);
     if($resultadoEliminar){
-      header("Location: adminmodificar.php");
+      header("Location: administrador.php");
     }else{
-      echo"<script>alert('No se pudo eliminar'); window.history.go(-1);</script>";
+      echo 'no se puede eliminar' ;
     }
+    }
+   
 ?>
  
 

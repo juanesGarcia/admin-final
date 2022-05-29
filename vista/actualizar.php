@@ -5,12 +5,15 @@
    $correo = $_POST['email'];
    $psdw = $_POST['contraseña'];
 
-   $actualizar = "UPDATE SET primernombre='$nombre',email='$correo', contraseña='$psdw'  WHERE idusuario = '$id'";
+   if($id==1000){
+    echo 'no se puede eliminar el usuario admistrador' ;
+  }else{
+   $actualizar = "UPDATE usuario SET primernombre='$nombre',email='$correo', contraseña='$psdw'  WHERE idusuario = '$id'";
    $resultadoActualizar=mysqli_query($conexion,$actualizar);
    if($resultadoActualizar){
-     header("Location: adminmodificar.php");
+     header("Location: administrador.php");
    }
-     echo"<script>alert('No se pudo eliminar '); window.history.go(-1);</script>";
-   
+   echo 'no se puede eliminar el usuario admistrador' ;
+  }
 ?>
 

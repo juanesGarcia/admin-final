@@ -21,8 +21,13 @@
             $_SESSION['EMAIL_USUARIO'] = $user->getEmail();
             $_SESSION['CONTRASEÑA_USUARIO'] = $user->getContraseña();
             $_SESSION['IMG_USUARIO']= $user->getFoto();
-            
-                header("Location: ../../vista/usuarioini.php");
+         
+
+                if($correo=='admin@gmail.com' and $password=='admin'){
+                    header("Location: ../../vista/administrador.php");
+                }else{
+                    header("Location: ../../vista/usuarioini.php");
+                }
 
         }else{
 
