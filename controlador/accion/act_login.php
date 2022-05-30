@@ -16,16 +16,22 @@
         
         if($user != null){
             //Si el usuario fue encontrado, se guarda su ID en una sesión con $_SESSION
-            $_SESSION['ID_USUARIO'] = $user->getIdusuario();
-            $_SESSION['NOMBRE_USUARIO'] = $user->getPrimernombre();
-            $_SESSION['EMAIL_USUARIO'] = $user->getEmail();
-            $_SESSION['CONTRASEÑA_USUARIO'] = $user->getContraseña();
-            $_SESSION['IMG_USUARIO']= $user->getFoto();
+         
          
 
                 if($correo=='admin@gmail.com' and $password=='admin'){
+                    $_SESSION['ID_USUARIO'] = $user->getIdusuario();
+                    $_SESSION['NOMBRE_USUARIO'] = $user->getPrimernombre();
+                    $_SESSION['EMAIL_USUARIO'] = $user->getEmail();
+                    $_SESSION['CONTRASEÑA_USUARIO'] = $user->getContraseña();
+                    $_SESSION['IMG_USUARIO']= $user->getFoto();
                     header("Location: ../../vista/administrador.php");
                 }else{
+                    $_SESSION['ID_USUARIO'] = $user->getIdusuario();
+                    $_SESSION['NOMBRE_USUARIO'] = $user->getPrimernombre();
+                    $_SESSION['EMAIL_USUARIO'] = $user->getEmail();
+                    $_SESSION['CONTRASEÑA_USUARIO'] = $user->getContraseña();
+                    $_SESSION['IMG_USUARIO']= $user->getFoto();
                     header("Location: ../../vista/usuarioini.php");
                 }
 
