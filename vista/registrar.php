@@ -6,15 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/registrar.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!---->
+    <link rel="stylesheet" href="css/sweetalert2.min.css"><!---->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-    function mover() {
-        window.location.href = '../index.php';
-    }
-
+ 
     function deshabilitaRetroceso() {
         window.location.hash = "no-back-button";
         window.location.hash =
@@ -35,8 +34,8 @@
     <div class="total">
         <div class="container">
             <div class="iniciarsesion">
-                <h2 class="letras" onclick="mover()">Registrar Sesión</h2>
-                <form action="../controlador/accion/act_registrarUsuario.php" method="POST" enctype="multipart/form-data">
+                <h2 class="letras" >Registrar Sesión</h2>
+                <div action="../controlador/accion/act_registrarUsuario.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="nom">Nombre:</label>
                         <input type="text" class="form-control" id="nombre" placeholder="Digite su nombre" name="nom">
@@ -64,11 +63,11 @@
                         <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" name="remember"> Remember me
                         </label>
-                    </div>
+</div>
                     <br>
 
-                    <button type="submit" class="btn btn-dark" name="register">Submit</button>
-                                </form>
+                  <button id="btnSubmit" class="btn btn-dark">Submit</button>
+                </div> 
                 <br></br>
             </div>
             <div class="fotos-ini">
@@ -79,6 +78,12 @@
         </div>
 
     </div>
+
+<script src="js/librerias/jquery-3.3.1.min.js"></script>
+<script src="js/librerias/bootstrap.min.js"></script>
+<script src="js/librerias/popper.min.js "></script>
+<script src="js/librerias/sweetalert2.js"></script>
+<script src="js/codigo.js"></script>
 
 </body>
 
