@@ -57,7 +57,6 @@
         <ul class="nav">
             <li><a href="#"><img src="image/console.png" class="imgRedonda"><?php echo $_SESSION['NOMBRE_USUARIO']  ?></a>
           <ul>
-            <li><a href="perfil.php">Perfil</a></li>
             <li><a href="../controlador/accion/act_login.php">Cerrar sesión</a></li>
             </li>
           </ul>

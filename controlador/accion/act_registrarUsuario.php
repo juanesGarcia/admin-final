@@ -29,8 +29,9 @@ if ($nombre != "" and $correo != "" and $password1 != "" and $password1 == $pass
 
             header("Location: ../../vista/registrar.php");
         }
-    }
-    $usuario = new Usuario(NULL, $nombre, $correo, $password1, NULL);
+    }else{
+
+   $usuario = new Usuario(NULL, $nombre, $correo, $password1, NULL);
     $registro = registrarUsuario($usuario);
     if ($registro)
         header("Location: ../../vista/usuarioini.php");
@@ -38,6 +39,10 @@ if ($nombre != "" and $correo != "" and $password1 != "" and $password1 == $pass
 
         header("Location: ../../vista/registrar.php");
     }
+
+
+    }
+ 
 } else {
 
     header("Location: ../../vista/registrar.php");

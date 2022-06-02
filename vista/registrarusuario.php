@@ -1,21 +1,25 @@
 <?php
-    //Con session_start() se puede iniciar una nueva sesión 
-    //o reanudar la sesión existente
-    session_start();
-    if(!isset(($_SESSION['EMAIL_USUARIO']))){
-        header("Location: iniciar.php");
-    }
-    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-     header("Cache-Control: post-check=0, pre-check=0", false);
-     header("Pragma: no-cache")
+//Con session_start() se puede iniciar una nueva sesión 
+//o reanudar la sesión existente
+session_start();
+if (!isset(($_SESSION['EMAIL_USUARIO']))) {
+  header("Location: iniciar.php");
+}
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache")
 
 ?>
+
 <?php
-    include("cn.php");
-    $id = $_GET["id"];
-    $usuarios = "SELECT * FROM usuario WHERE idusuario = '$id' ";
-    
+include("cn.php");
+$id = $_GET["id"];
+$usuarios = "SELECT * FROM usuario WHERE idusuario = '$id' ";
+
 ?>
+
+
+
 
 <!doctype html>
 <html lang="en">
@@ -26,9 +30,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css" />
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/registrarusuario.css" />  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/adminmodificar.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <title>Datos del usuario</title>
 </head>
@@ -39,58 +42,46 @@
       <li class="nave-item">
         <a class="nav-link" href="
               #"><img class="imge" src="image/gimnasio.png"></a>
-            
+
       </li>
       <li class="nave-item">
-        <a class="nav-link" href="administrador.php"><span
-            class="oi oi-calendar"></span> Inicio</a>
+        <a class="nav-link" href="administrador.php"><span class="oi oi-calendar"></span> Inicio</a>
       </li>
       <li class="nave-item">
         <a class="nav-link" href="registrarusuario.php"><span class="oi oi-briefcase"></span> Insertar</a>
       </li>
-      
+
     </ul>
 
-        <ul class="nav">
-            <li><a href="#"><img src="image/console.png" class="imgRedonda"><?php echo $_SESSION['NOMBRE_USUARIO']  ?></a>
-          <ul>
-            <li><a href="perfil.php">Perfil</a></li>
-            <li><a href="modificar.php">Modificar</a></li>
-            <li><a href="../controlador/accion/act_login.php">Cerrar sesión</a></li>
-            </li>
-          </ul>
+    <ul class="nav">
+      <li><a href="#"><img src="image/console.png" class="imgRedonda"><?php echo $_SESSION['NOMBRE_USUARIO']  ?></a>
+        <ul>
+          <li><a href="../controlador/accion/act_login.php">Cerrar sesión</a></li>
+      </li>
+    </ul>
   </div>
-  <form action="../vista/insertar.php" method="post">
-<div class="container__tabla container__tabla__editar" >
-                          <div class="titulo__tabla tabla__titulo__edit">Crear un usuario</div>
-                            <div class="tabla__header">Nombre</div>
-                            <div class="tabla__header">Email</div>
-                            <div class="tabla__header">Contraseña</div>                          
-                            <div class="tabla__header">Rol</div>
-                            <div class="tabla__header">Opciones</div>
-
-                            <input type="text" class="tabla__item" name="primernombre">
-                              <input type="text" class="tabla__item" name="email">
-                              <input type="text" class="tabla__item" name="contraseña">
-                <div style="padding:7px 0;" class="justify-content-center row">
-                <div class="col-md-8">
-                <select id="Administrador" class="tabla__item" name="administrador">
-                    <option>Elegir rol</option>
-                    <option value="1">Administrador</option>
-                    <option value="0">Usuario</option>
-                </select>
-                </div></div>
-                <div class="justify-content-center row">
-                    <button type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary" id="crear">Crear</button>
-                </div>
-
-</div>
+  <form action="../vista/insertar.php" id="form" method="POST" enctype="multipart/form-data">
 
 
-</form>
- 
-	<script src="js/logica/administradorUsuarios.js"></script>
+    <div class="container__tabla container__tabla__editar">
+      <div class="titulo__tabla tabla__titulo__edit">Datos de usuarios</div>
+      <div class="tabla__header">Nombre</div>
+      <div class="tabla__header">Email</div>
+      <div class="tabla__header">Contraseña</div>
+      <div class="tabla__header">Operaciones</div>
 
+        <input type="hidden" class="tabla__item" value="" name="id">
+        <input type="text" class="tabla__item" value="" name="primernombre">
+        <input type="text" class="tabla__item" value="" name="email">
+        <input type="text" class="tabla__item" value="" name="contraseña">
+
+        <input type="submit" value="Registrar" class="container__submit container__submit--Registrar">
+
+        <div></div>
+
+    </div>
+    <script src="confirmacion.js"></script>
+  </form>
 </body>
+
 </html>

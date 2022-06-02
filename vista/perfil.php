@@ -1,13 +1,13 @@
 <?php
-    //Con session_start() se puede iniciar una nueva sesión 
-    //o reanudar la sesión existente
-    session_start();
-    if(!isset(($_SESSION['EMAIL_USUARIO']))){
-        header("Location: iniciar.php");
-    }
-    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-    header("Cache-Control: post-check=0, pre-check=0", false);
-    header("Pragma: no-cache");
+//Con session_start() se puede iniciar una nueva sesión 
+//o reanudar la sesión existente
+session_start();
+if (!isset(($_SESSION['EMAIL_USUARIO']))) {
+    header("Location: iniciar.php");
+}
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 ?>
 
 <!doctype html>
@@ -19,15 +19,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css" />
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/perfil.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Datos del usuario</title>
- 
-</head>
 
-<body >
+</head>
+<script>
+     function mover() {
+        window.location.href = '../controlador/accion/act_EliminarUsuario.php';
+    }
+</script>
+
+<body>
     <div class="navbar navbar-expand-sm bg-dark fixed-top">
         <ul class="navbar-nav mr-auto">
             <li class="nave-item">
@@ -47,8 +51,7 @@
         </ul>
 
         <ul class="nav">
-            <li><a href="#"><img src="<?php echo $_SESSION['IMG_USUARIO']?>"
-                        class="imgRedonda"><?php echo  $_SESSION['NOMBRE_USUARIO']?></a>
+            <li><a href="#"><img src="<?php echo $_SESSION['IMG_USUARIO'] ?>" class="imgRedonda"><?php echo  $_SESSION['NOMBRE_USUARIO'] ?></a>
                 <ul>
                     <li><a href="perfil.php">Perfil</a></li>
                     <li><a href="modificar.php">Modificar</a></li>
@@ -61,23 +64,24 @@
 
     <div class="card">
         <div class="img">
-            <img src="<?php echo $_SESSION['IMG_USUARIO']?>" >
+            <img src="<?php echo $_SESSION['IMG_USUARIO'] ?>">
         </div>
         <div class="content">
-            <h1><?php  echo $_SESSION['NOMBRE_USUARIO']?></h1>
+            <h1><?php echo $_SESSION['NOMBRE_USUARIO'] ?></h1>
             <div class="center">
                 <div class="box">
                     <h3>Email</h3>
-                    <p><?php  echo $_SESSION['EMAIL_USUARIO']?></p>
+                    <p><?php echo $_SESSION['EMAIL_USUARIO'] ?></p>
                 </div>
                 <div class="box">
                     <h3>Contraseña</h3>
-                    <p><?php  echo $_SESSION['CONTRASEÑA_USUARIO']?></p>
+                    <p><?php echo $_SESSION['CONTRASEÑA_USUARIO'] ?></p>
                 </div>
             </div>
-            <button type="submit" class="btn btn-dark" href="/../controlador/accion/act_logout.php" id="boton">Eliminar Usuario</button>
-            
+            <button type="submit" class="btn btn-dangerous"  onclick="mover()"  id="boton">Eliminar Usuario</button>
+
         </div>
     </div>
-  </body>
+</body>
+
 </html>
