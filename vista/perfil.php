@@ -75,7 +75,7 @@ header("Pragma: no-cache");
                 </div>
                 <div class="box">
                     <h3>Contraseña</h3>
-                    <p><?php echo $_SESSION['CONTRASEÑA_USUARIO'] ?></p>
+                    <p><?php echo $_SESSION['CONTRASEÑA_USUARIO'] ?></p>    
                 </div>
             </div>
             <button type="submit" class="btn btn-dangerous"  onclick="mover()"  id="boton">Eliminar Usuario</button>

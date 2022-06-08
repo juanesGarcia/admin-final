@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/registrar.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!---->
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -15,20 +19,12 @@
             window.location.href = '../index.php';
         }
 
-        function deshabilitaRetroceso() {
-            window.location.hash = "no-back-button";
-            window.location.hash =
-                "Again-No-back-button"; //again because google chrome don't insert first hash into history
-            window.onhashchange = function() {
-                window.location.hash = "no-back-button";
-            }
-        }
-
+ 
 
     </script>
 </head>
 
-<body onload=" deshabilitaRetroceso()">
+<body >
     <div class="total">
         <div class="container">
             <div class="iniciarsesion">
@@ -48,7 +44,7 @@
                     </div>
                     <div class="form-group">
                         <label for="pwd1">Verificar Password:</label>
-                        <input type="password" class="form-control" id="password" placeholder="Verificar password" name="pswd1">
+                        <input type="password" class="form-control" id="password1" placeholder="Verificar password" name="pswd1" width="50%" height="80%">
                     </div>
                     <div class="form-group">
                         <label for="image">Subir imagen</label>
@@ -62,7 +58,7 @@
                     </div>
                     <br>
 
-                    <button type="submit" class="btn btn-dark" name="register">Submit</button>
+                    <button type="submit" class="btn btn-dark" name="register"  id="btnSubmit" onclick="pru()">Submit</button>
                 </form>
                 <br></br>
             </div>
@@ -74,7 +70,11 @@
         </div>
 
     </div>
-
+    <script src="js/librerias/jquery-3.3.1.min.js"></script>
+<script src="js/librerias/bootstrap.min.js"></script>
+<script src="js/librerias/popper.min.js "></script>
+<script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+<script src="js/codigo.js"></script>
 </body>
 
 </html>

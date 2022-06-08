@@ -15,5 +15,3 @@
    }
    echo 'no se puede eliminar el usuario admistrador' ;
   }
-?>
-

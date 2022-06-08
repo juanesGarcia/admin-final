@@ -37,7 +37,7 @@
 
         }else{
 
- 
+            sleep(3);
             header("Location: ../../vista/iniciar.php");
         }
 

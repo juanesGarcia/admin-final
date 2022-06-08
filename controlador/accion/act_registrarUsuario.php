@@ -2,6 +2,7 @@
 
 session_start();
 
+
 require_once(__DIR__ . "/../mdb/mdbUsuario.php");
 require_once(__DIR__ . "/../../modelo/entidad/Usuario.php");
 
@@ -23,19 +24,27 @@ if ($nombre != "" and $correo != "" and $password1 != "" and $password1 == $pass
     if ($archivo != "") {
         $usuario = new Usuario(NULL, $nombre, $correo, $password1, $mos_f);
         $registro = registrarUsuario($usuario);
-        if ($registro)
-            header("Location: ../../vista/usuarioini.php");
-        else {
+        if ($registro){
+            sleep(3);
 
+            header("Location: ../../vista/usuarioini.php");
+        }
+       else {
+
+                sleep(3);
             header("Location: ../../vista/registrar.php");
         }
     }else{
 
    $usuario = new Usuario(NULL, $nombre, $correo, $password1, NULL);
     $registro = registrarUsuario($usuario);
-    if ($registro)
+    if ($registro){
+        sleep(3);
         header("Location: ../../vista/usuarioini.php");
+    }
+        
     else {
+        sleep(3);
 
         header("Location: ../../vista/registrar.php");
     }
@@ -44,6 +53,7 @@ if ($nombre != "" and $correo != "" and $password1 != "" and $password1 == $pass
     }
  
 } else {
+    sleep(3);
 
     header("Location: ../../vista/registrar.php");
 }

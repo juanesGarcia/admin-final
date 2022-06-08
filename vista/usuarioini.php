@@ -1,14 +1,14 @@
 <?php
-    //Con session_start() se puede iniciar una nueva sesión 
-    //o reanudar la sesión existente
-    session_start();
-    if(!isset(($_SESSION['EMAIL_USUARIO']))){
-      header("Location: iniciar.php");
-  }
-  header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-  header("Cache-Control: post-check=0, pre-check=0", false);
-  header("Pragma: no-cache");
-    
+//Con session_start() se puede iniciar una nueva sesión 
+//o reanudar la sesión existente
+session_start();
+if (!isset(($_SESSION['ID_USUARIO']))) {
+    header("Location: iniciar.php");
+}
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 ?>
 
 
@@ -21,21 +21,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css" />
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/usuarioini.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Fit Life Pro</title>
     <script>
-    function deshabilitaRetroceso() {
-        window.location.hash = "no-back-button";
-        window.location.hash =
-        "Again-No-back-button"; //again because google chrome don't insert first hash into history
-        window.onhashchange = function() {
+        function deshabilitaRetroceso() {
             window.location.hash = "no-back-button";
-        }
+            window.location.hash =
+                "Again-No-back-button"; //again because google chrome don't insert first hash into history
+            window.onhashchange = function() {
+                window.location.hash = "no-back-button";
+            }
 
-    }
+        }
     </script>
 </head>
 
@@ -58,8 +57,7 @@
             </li>
 
             <ul class="nav">
-                <li><a href="#"><img src="<?php echo $_SESSION['IMG_USUARIO']?>" 
-                            class="imgRedonda"><?php echo $_SESSION['NOMBRE_USUARIO']  ?></a>
+                <li><a href="#"><img src="<?php echo $_SESSION['IMG_USUARIO'] ?>" class="imgRedonda"><?php echo $_SESSION['NOMBRE_USUARIO']  ?></a>
                     <ul>
                         <li><a href="perfil.php">Perfil</a></li>
                         <li><a href="modificar.php">Modificar</a></li>
@@ -124,8 +122,7 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
@@ -206,10 +203,7 @@
                 blanditiis, excepturi explicabo, sequi accusamus veritatis! Aspernatur aut reprehenderit temporibus.
                 amet consectetur adipisicing elit. Quidem sapiente rerum molestias numquam culpa omnis dolores est.
                 Perspiciatis doloribus sint quod unde tenetur similique quis assumenda saepe, aut maxime possimus!</p>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62614.47594331466!2d-74.21741674053796!3d11.231607344223223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4f66ff59a173d%3A0x124b95fc153af9b8!2sSanta%20Marta%2C%20Magdalena!5e0!3m2!1ses!2sco!4v1651451355862!5m2!1ses!2sco"
-                width="1000" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62614.47594331466!2d-74.21741674053796!3d11.231607344223223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4f66ff59a173d%3A0x124b95fc153af9b8!2sSanta%20Marta%2C%20Magdalena!5e0!3m2!1ses!2sco!4v1651451355862!5m2!1ses!2sco" width="1000" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
             <br><br>
         </div>
@@ -218,7 +212,7 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-    AOS.init();
+        AOS.init();
     </script>
 </body>
 <footer>
@@ -239,8 +233,7 @@
             <h4 class="redesde">Información</h4>
             <img class="imgredes" src="https://cdn-icons-png.flaticon.com/128/25/25453.png"><a>+57 3186699925 </a><br>
             <img class="imgredes" src="https://cdn-icons-png.flaticon.com/128/25/25694.png"><a> calle 48cs#25-94</a><br>
-            <img class="imgredes"
-                src="https://cdn-icons-png.flaticon.com/128/25/25236.png"><a>fitlifepro2022@gmail.com</a>
+            <img class="imgredes" src="https://cdn-icons-png.flaticon.com/128/25/25236.png"><a>fitlifepro2022@gmail.com</a>
         </div>
     </div>
 </footer>
